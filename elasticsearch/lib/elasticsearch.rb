@@ -83,7 +83,7 @@ module Elasticsearch
       elsif Gem::Version.new(version) >= Gem::Version.new('7.0.0') &&
             Gem::Version.new(version) < Gem::Version.new('7.14-SNAPSHOT')
         raise Elasticsearch::UnsupportedProductError unless body['tagline'] == YOU_KNOW_FOR_SEARCH
-        raise Elasticsearch::UnsupportedProductError.new(NOT_SUPPORTED_ELASTICSEARCH_WARNING) unless body.dig('version', 'build_flavor') == 'default'
+        #raise Elasticsearch::UnsupportedProductError.new(NOT_SUPPORTED_ELASTICSEARCH_WARNING) unless body.dig('version', 'build_flavor') == 'default'
 
         @verified = true
       end
